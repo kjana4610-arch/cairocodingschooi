@@ -1,0 +1,117 @@
+#include <iostream>
+using namespace std;
+
+class Book
+{
+private:
+    int id;
+    string title;
+    string author;
+    bool available;
+
+public:
+
+    void addBook()
+    {
+        cout << "Enter Book ID: ";
+        cin >> id;
+
+        cout << "Enter Book Title: ";
+        cin >> title;
+
+        cout << "Enter Author Name: ";
+        cin >> author;
+
+        available = true;
+
+        cout << "Book added successfully!\n";
+    }
+
+    void borrowBook()
+    {
+        if (available)
+        {
+            available = false;
+            cout << "Book borrowed successfully!\n";
+        }
+        else
+        {
+            cout << "Book is already borrowed!\n";
+        }
+    }
+
+    void returnBook()
+    {
+        if (!available)
+        {
+            available = true;
+            cout << "Book returned successfully!\n";
+        }
+        else
+        {
+            cout << "Book is already available!\n";
+        }
+    }
+
+    void displayBook()
+    {
+        cout << "\n===== BOOK INFORMATION =====\n";
+        cout << "ID: " << id << endl;
+        cout << "Title: " << title << endl;
+        cout << "Author: " << author << endl;
+
+        if (available)
+            cout << "Status: Available\n";
+        else
+            cout << "Status: Borrowed\n";
+    }
+};
+
+int main()
+{
+    Book book;
+
+    int choice;
+
+    do
+    {
+        cout << "\n===== LIBRARY MANAGEMENT SYSTEM =====\n";
+        cout << "1. Add Book\n";
+        cout << "2. Borrow Book\n";
+        cout << "3. Return Book\n";
+        cout << "4. Display Book\n";
+        cout << "5. Exit\n";
+
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            book.addBook();
+            break;
+
+        case 2:
+            book.borrowBook();
+            break;
+
+        case 3:
+            book.returnBook();
+            break;
+
+        case 4:
+            book.displayBook();
+            break;
+
+        case 5:
+            cout << "Thank you!\n";
+            break;
+
+        default:
+            cout << "Invalid choice!\n";
+        }
+
+    } while (choice != 5);
+
+    return 0;
+}
