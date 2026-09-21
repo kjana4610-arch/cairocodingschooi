@@ -1,0 +1,106 @@
+#include <iostream>
+using namespace std;
+
+class Quiz
+{
+private:
+    int score;
+
+public:
+
+    Quiz()
+    {
+        score = 0;
+    }
+
+    void startQuiz()
+    {
+        int answer;
+
+        cout << "===== QUIZ APP =====\n\n";
+
+        // Question 1
+        cout << "1. What is the capital of Egypt?\n";
+        cout << "1. Cairo\n";
+        cout << "2. Giza\n";
+        cout << "3. Alexandria\n";
+        cout << "4. Luxor\n";
+        cout << "Your answer: ";
+        cin >> answer;
+
+        if (answer == 1)
+            score++;
+
+        // Question 2
+        cout << "\n2. Which language is used for OOP?\n";
+        cout << "1. HTML\n";
+        cout << "2. C++\n";
+        cout << "3. CSS\n";
+        cout << "4. SQL\n";
+        cout << "Your answer: ";
+        cin >> answer;
+
+        if (answer == 2)
+            score++;
+
+        // Question 3
+        cout << "\n3. How many sides does a triangle have?\n";
+        cout << "1. 2\n";
+        cout << "2. 3\n";
+        cout << "3. 4\n";
+        cout << "4. 5\n";
+        cout << "Your answer: ";
+        cin >> answer;
+
+        if (answer == 2)
+            score++;
+
+        // Question 4
+        cout << "\n4. Which one is a programming language?\n";
+        cout << "1. C++\n";
+        cout << "2. Photoshop\n";
+        cout << "3. Windows\n";
+        cout << "4. Chrome\n";
+        cout << "Your answer: ";
+        cin >> answer;
+
+        if (answer == 1)
+            score++;
+
+        // Question 5
+        cout << "\n5. What does OOP stand for?\n";
+        cout << "1. Object Oriented Programming\n";
+        cout << "2. Online Open Program\n";
+        cout << "3. Object Operating Program\n";
+        cout << "4. Open Object Process\n";
+        cout << "Your answer: ";
+        cin >> answer;
+
+        if (answer == 1)
+            score++;
+
+        showResult();
+    }
+
+    void showResult()
+    {
+        cout << "\n===== RESULT =====\n";
+        cout << "Your Score: " << score << " / 5\n";
+
+        if (score == 5)
+            cout << "Excellent!\n";
+        else if (score >= 3)
+            cout << "Good Job!\n";
+        else
+            cout << "Try Again!\n";
+    }
+};
+
+int main()
+{
+    Quiz quiz;
+
+    quiz.startQuiz();
+
+    return 0;
+}
