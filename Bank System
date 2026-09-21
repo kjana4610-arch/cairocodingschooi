@@ -1,0 +1,111 @@
+#include <iostream>
+using namespace std;
+
+class Bank
+{
+private:
+    string name;
+    int accountNumber;
+    double balance;
+
+public:
+
+    void createAccount()
+    {
+        cout << "Enter Name: ";
+        cin >> name;
+
+        cout << "Enter Account Number: ";
+        cin >> accountNumber;
+
+        cout << "Enter Balance: ";
+        cin >> balance;
+    }
+
+    void deposit()
+    {
+        double amount;
+
+        cout << "Enter Deposit Amount: ";
+        cin >> amount;
+
+        balance += amount;
+
+        cout << "Money Deposited Successfully!\n";
+    }
+
+    void withdraw()
+    {
+        double amount;
+
+        cout << "Enter Withdraw Amount: ";
+        cin >> amount;
+
+        if (amount <= balance)
+        {
+            balance -= amount;
+
+            cout << "Money Withdrawn Successfully!\n";
+        }
+        else
+        {
+            cout << "Insufficient Balance!\n";
+        }
+    }
+
+    void showAccount()
+    {
+        cout << "\n===== Account Information =====\n";
+        cout << "Name: " << name << endl;
+        cout << "Account Number: " << accountNumber << endl;
+        cout << "Balance: " << balance << endl;
+    }
+};
+
+int main()
+{
+    Bank account;
+
+    int choice;
+
+    do
+    {
+        cout << "\n===== BANK SYSTEM =====\n";
+        cout << "1. Create Account\n";
+        cout << "2. Deposit Money\n";
+        cout << "3. Withdraw Money\n";
+        cout << "4. Show Account\n";
+        cout << "5. Exit\n";
+
+        cout << "Choose: ";
+        cin >> choice;
+
+        if (choice == 1)
+        {
+            account.createAccount();
+        }
+        else if (choice == 2)
+        {
+            account.deposit();
+        }
+        else if (choice == 3)
+        {
+            account.withdraw();
+        }
+        else if (choice == 4)
+        {
+            account.showAccount();
+        }
+        else if (choice == 5)
+        {
+            cout << "Thank You!\n";
+        }
+        else
+        {
+            cout << "Invalid Choice!\n";
+        }
+
+    } while (choice != 5);
+
+    return 0;
+}
