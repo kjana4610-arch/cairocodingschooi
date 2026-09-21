@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student
+{
+private:
+    int id;
+    string name;
+    double grade;
+
+public:
+    void input()
+    {
+        cout << "Enter ID: ";
+        cin >> id;
+
+        cout << "Enter Name: ";
+        cin >> name;
+
+        cout << "Enter Grade: ";
+        cin >> grade;
+    }
+
+    void display()
+    {
+        cout << "\nID: " << id;
+        cout << "\nName: " << name;
+        cout << "\nGrade: " << grade << endl;
+    }
+};
+
+int main()
+{
+    Student s[3];
+
+    cout << "=== Student Management System ===\n";
+
+    for (int i = 0; i < 3; i++)
+    {
+        cout << "\nStudent " << i + 1 << endl;
+        s[i].input();
+    }
+
+    cout << "\n=== Students Information ===\n";
+
+    for (int i = 0; i < 3; i++)
+    {
+        s[i].display();
+    }
+
+    return 0;
+}
