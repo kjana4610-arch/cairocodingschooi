@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Patient
+{
+private:
+    int id;
+    string name;
+    int age;
+    string disease;
+
+public:
+    void input()
+    {
+        cout << "Enter Patient ID: ";
+        cin >> id;
+
+        cout << "Enter Name: ";
+        cin >> name;
+
+        cout << "Enter Age: ";
+        cin >> age;
+
+        cout << "Enter Disease: ";
+        cin >> disease;
+    }
+
+    void display()
+    {
+        cout << "\nID: " << id;
+        cout << "\nName: " << name;
+        cout << "\nAge: " << age;
+        cout << "\nDisease: " << disease << endl;
+    }
+};
+
+int main()
+{
+    Patient p[3];
+
+    cout << "=== Hospital Management System ===\n";
+
+    for (int i = 0; i < 3; i++)
+    {
+        cout << "\nPatient " << i + 1 << endl;
+        p[i].input();
+    }
+
+    cout << "\n=== Patients Information ===\n";
+
+    for (int i = 0; i < 3; i++)
+    {
+        p[i].display();
+    }
+
+    return 0;
+}
